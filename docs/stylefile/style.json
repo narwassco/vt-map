@@ -7,7 +7,7 @@
     "pitch": 0,
     "sources": {
         "assets": {
-            "url": "./tiles/{z}/{x}/{y}.pbf",
+            "url": "https://narwassco.github.io/vt-map/tiles/{z}/{x}/{y}.pbf",
             "type": "vector"
         }
     },

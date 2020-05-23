@@ -83,12 +83,12 @@ $(function(){
             if (!this_.map.hasImage(name)) this_.map.addImage(name, image);
         });
     }
-    loadImage('./stylefile/icons/firehydrant.png', 'firehydrant');
-    loadImage('./stylefile/icons/meter_avg.png', 'meter_avg');
-    loadImage('./stylefile/icons/meter_co.png', 'meter_co');
-    loadImage('./stylefile/icons/meter_on.png', 'meter_on');
-    loadImage('./stylefile/icons/valve.png', 'valve');
-    loadImage('./stylefile/icons/washout.png', 'washout');
+    loadImage('https://narwassco.github.io/vt-map/stylefile/icons/firehydrant.png', 'firehydrant');
+    loadImage('https://narwassco.github.io/vt-map/stylefile/icons/meter_avg.png', 'meter_avg');
+    loadImage('https://narwassco.github.io/vt-map/stylefile/icons/meter_co.png', 'meter_co');
+    loadImage('https://narwassco.github.io/vt-map/stylefile/icons/meter_on.png', 'meter_on');
+    loadImage('https://narwassco.github.io/vt-map/stylefile/icons/valve.png', 'valve');
+    loadImage('https://narwassco.github.io/vt-map/stylefile/icons/washout.png', 'washout');
 
     this.map.on('load', function() {
         $.get('./stylefile/style.json', (style)=>{
