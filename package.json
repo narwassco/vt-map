@@ -18,8 +18,6 @@
   },
   "homepage": "https://github.com/narwassco/vt-map#readme",
   "dependencies": {
-    "@mapbox/tilelive": "^6.1.0",
-    "fs": "0.0.1-security",
     "mbtiles2pbf": "git+https://github.com/narwassco/mbtiles2pbf.git",
     "postgis2geojson": "git+https://github.com/narwassco/postgis2geojson.git"
   }
