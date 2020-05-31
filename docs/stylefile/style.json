@@ -7,7 +7,7 @@
     "pitch": 0,
     "sources": {
         "assets": {
-            "url": "https://narwassco.github.io/vt-map/tiles/{z}/{x}/{y}.pbf",
+            "url": "https://narwassco.github.io/vt-map/tiles/{z}/{x}/{y}.mvt",
             "type": "vector"
         }
     },
@@ -34,7 +34,8 @@
             "maxzoom": 17,
             "layout": {},
             "paint": {
-                "line-color": "hsl(60, 100%, 50%)",
+                "line-color": "hsl(33, 100%, 50%)",
+                "line-width": 1.5,
                 "line-dasharray": [1, 1],
                 "line-gap-width": 0.5
             }
@@ -46,7 +47,7 @@
             "source-layer": "parcels",
             "minzoom": 16,
             "layout": {},
-            "paint": {"line-width": 1.4, "line-color": "hsl(0, 4%, 66%)"}
+            "paint": {"line-width": 1.2, "line-color": "hsl(0, 0%, 0%)"}
         },
         {
             "id": "wtp",
@@ -133,10 +134,10 @@
             "type": "symbol",
             "source": "assets",
             "source-layer": "valve",
-            "minzoom": 14,
+            "minzoom": 15,
             "layout": {
                 "icon-image": "valve",
-                "icon-size": 0.8,
+                "icon-size": 0.7,
                 "text-field": [
                     "step",
                     ["zoom"],
@@ -256,7 +257,7 @@
                     "meter_co",
                     "meter"
                 ],
-                "icon-size": 0.8,
+                "icon-size": 0.7,
                 "text-justify": "left",
                 "text-field": [
                     "step",
@@ -293,8 +294,8 @@
                 ],
                 "text-max-width": 8,
                 "icon-image": "default-6",
-                "icon-text-fit": "both",
-                "icon-size": 1.2
+                "icon-size": 1.1,
+                "icon-text-fit": "both"
             },
             "paint": {
                 "text-color": "hsl(131, 64%, 45%)",
@@ -311,17 +312,17 @@
             "maxzoom": 17,
             "filter": ["match", ["get", "layer"], ["dma"], true, false],
             "layout": {
-                "icon-image": "pe-regional-4",
-                "icon-size": 1.5,
                 "text-field": ["to-string", ["get", "name"]],
+                "icon-image": "pe-regional-4",
                 "icon-text-fit": "both",
+                "icon-size": 1.5,
                 "text-font": [
                     "Arial Unicode MS Bold",
                     "Arial Unicode MS Regular"
                 ],
                 "text-size": 14
             },
-            "paint": {"text-color": "hsl(34, 100%, 50%)"}
+            "paint": {"text-color": "hsl(33, 100%, 50%)"}
         },
         {
             "id": "parcels_annotation",
@@ -400,16 +401,15 @@
             "filter": ["match", ["get", "layer"], ["NARWASSCO"], true, false],
             "layout": {
                 "text-field": ["to-string", ["get", "name"]],
-                "text-font": ["Open Sans Regular", "Arial Unicode MS Regular"],
                 "text-size": 12,
-                "text-max-width": 8,
                 "icon-image": "dot-9",
+                "text-offset": [0, 1.2],
                 "icon-size": 2,
-                "text-offset": [0, 1.2]
+                "text-max-width": 8
             },
             "paint": {
-                "text-halo-color": "hsl(0, 0%, 100%)",
-                "text-halo-width": 1.5
+                "text-halo-width": 1.5,
+                "text-halo-color": "hsl(0, 0%, 100%)"
             }
         },
         {
@@ -432,15 +432,15 @@
                     "Arial Unicode MS Regular"
                 ],
                 "text-size": 12,
+                "text-max-width": 7,
                 "icon-image": "rectangle-yellow-6",
                 "icon-text-fit": "both",
-                "icon-size": 1.2,
-                "text-max-width": 7
+                "icon-size": 1.2
             },
             "paint": {
-                "text-halo-color": "hsla(0, 0%, 100%, 0)",
+                "text-halo-color": "#ffffff",
                 "text-halo-width": 1,
-                "text-color": "hsl(0, 89%, 52%)"
+                "text-color": "hsl(5, 86%, 49%)"
             }
         }
     ]

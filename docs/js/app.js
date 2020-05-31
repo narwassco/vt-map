@@ -5,7 +5,8 @@ const STYLES = [
     label: 'Street',
     styleName: 'Street',
     styleUrl: 'mapbox://styles/mapbox/streets-v9',
-    }, {
+    }, 
+    {
     label: 'Satellite',
     styleName: 'Satellite',
     styleUrl: 'mapbox://styles/mapbox/satellite-streets-v11',
@@ -21,8 +22,39 @@ $(function(){
         hash:true,
         attributionControl: false,
     });
+
+    var this_ = this;
+    const loadImage = function(url, name){
+        this_.map.loadImage(url, function(error, image) {
+            if (error) throw error;
+            if (!this_.map.hasImage(name)) this_.map.addImage(name, image);
+        });
+    }
+
+    const loadAssetData = function(){
+        var images = ['firehydrant','meter_avg','meter_co','meter_on','meter','valve','washout','pe-regional-4','rectangle-yellow-6']
+        images.forEach(img=>{
+            loadImage(`./stylefile/icons/${img}.png`, img);
+        })
     
-    this.map.addControl(new StylesControl({styles: STYLES,}), 'top-left');
+        this_.map.on('load', function() {
+            $.get('./stylefile/style.json', (style)=>{
+                this_.map.addSource('assets', {
+                    'type': 'vector',
+                    'tiles': [
+                        style.sources.assets.url
+                    ],
+                    'minzoom': 10,
+                    'maxzoom': 18
+                    });
+                style.layers.forEach(l=>{
+                    this_.map.addLayer(l);
+                })
+            });
+        });
+    }
+    
+    // this.map.addControl(new StylesControl({styles: STYLES,}), 'top-left');
     this.map.addControl(new SwitchAreasControl(), 'top-left');
     this.map.addControl(new mapboxgl.FullscreenControl(), 'top-right');
     this.map.addControl(new mapboxgl.NavigationControl());
@@ -76,33 +108,5 @@ $(function(){
     this.map.on('click', 'wtp', createPopup);
     this.map.on('click', 'pipeline', createPopup);
 
-    var this_ = this;
-    const loadImage = function(url, name){
-        this_.map.loadImage(url, function(error, image) {
-            if (error) throw error;
-            if (!this_.map.hasImage(name)) this_.map.addImage(name, image);
-        });
-    }
-    loadImage('https://narwassco.github.io/vt-map/stylefile/icons/firehydrant.png', 'firehydrant');
-    loadImage('https://narwassco.github.io/vt-map/stylefile/icons/meter_avg.png', 'meter_avg');
-    loadImage('https://narwassco.github.io/vt-map/stylefile/icons/meter_co.png', 'meter_co');
-    loadImage('https://narwassco.github.io/vt-map/stylefile/icons/meter_on.png', 'meter_on');
-    loadImage('https://narwassco.github.io/vt-map/stylefile/icons/valve.png', 'valve');
-    loadImage('https://narwassco.github.io/vt-map/stylefile/icons/washout.png', 'washout');
-
-    this.map.on('load', function() {
-        $.get('./stylefile/style.json', (style)=>{
-            this_.map.addSource('assets', {
-                'type': 'vector',
-                'tiles': [
-                    style.sources.assets.url
-                ],
-                'minzoom': 10,
-                'maxzoom': 18
-                });
-            style.layers.forEach(l=>{
-                this_.map.addLayer(l);
-            })
-        });
-    });
+    loadAssetData();
 })
