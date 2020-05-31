@@ -10,9 +10,8 @@ const bounds = {
 module.exports = {
     db: {
         user:'postgres',
-        // password:'N@rw@ssc0',
+        password:'N@rw@ssc0',
         // host:'host.docker.internal',
-        password:'kkc',
         host:'localhost',
         post:5432,
         database:'narwassco',
