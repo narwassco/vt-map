@@ -1,0 +1,3 @@
+[submodule "src/maki"]
+	path = src/maki
+	url = https://github.com/mapbox/maki.git

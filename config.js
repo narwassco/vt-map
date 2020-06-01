@@ -16,6 +16,14 @@ module.exports = {
         post:5432,
         database:'narwassco',
     },
+    sprite:{
+      icons: {
+        maki: export_dir + '/src/maki/icons',
+        water: export_dir + '/resources/water',
+      },
+      input_dir: export_dir + '/resources/svg',
+      output_dir: export_dir + '/docs/sprite',
+    },
     ghpages:{
       tiles: export_dir + '/docs/tiles'
     },

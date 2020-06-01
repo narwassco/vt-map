@@ -5,6 +5,7 @@
 Install [mbutil](https://github.com/mapbox/mbutil) on Python
 
 ```
+git clone https://github.com/narwassco/vt-map.git --recursive
 npm install
 ```
 
@@ -12,6 +13,12 @@ npm install
 
 ```
 npm run build
+```
+
+## Create sprite file
+
+```
+npm run sprite
 ```
 
 ## Configuration

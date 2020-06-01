@@ -1,4 +1,5 @@
 *.mbtiles
+resources/svg
 
 # Logs
 logs
