@@ -1,5 +1,6 @@
 *.mbtiles
 resources/svg
+public/tiles
 
 # Logs
 logs
