@@ -7,7 +7,10 @@
     "pitch": 0,
     "sources": {
         "assets": {
-            "url": "https://narwassco.github.io/vt-map/tiles/{z}/{x}/{y}.mvt",
+            "attribution": "Narok Water & Sewerage Services Company, Ltd.",
+            "tiles": [
+                "https://narwassco.github.io/vt-map/tiles/{z}/{x}/{y}.mvt"
+              ],
             "type": "vector"
         }
     },

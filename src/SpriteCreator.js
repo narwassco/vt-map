@@ -33,6 +33,53 @@ const copyFilesToDir = async(srcDir, distDir) => {
     })
 }
 
+const generateSvgs = (input_dir) => {
+    return svgs = glob.sync(path.resolve(input_dir))
+    .map(function(f) {
+        return {
+            svg: fs.readFileSync(f),
+            id: path.basename(f).replace('.svg', '')
+        };
+    });
+  }
+
+const suffix = (pxRatio) => {
+    if (pxRatio === 1) {
+      return ''
+    } else {
+      return `@${pxRatio}x`
+    }
+}
+
+const generateSprite = (pxRatio, svgs) => {
+    const output_dir = config.sprite.output_dir;
+    var pngPath = path.resolve(path.join(output_dir, `/sprite${suffix(pxRatio)}.png`));
+    var jsonPath = path.resolve(path.join(output_dir, `/sprite${suffix(pxRatio)}.json`));
+
+    spritezero.generateLayout({
+      imgs: svgs,
+      pixelRatio: pxRatio,
+      format: true
+    }, (err, dataLayout) => {
+      if (err) throw err
+      fs.writeFileSync(
+        jsonPath,
+        JSON.stringify(dataLayout, null, 2)
+      )
+    })
+    spritezero.generateLayout({
+      imgs: svgs,
+      pixelRatio: pxRatio,
+      format: false
+    }, (err, imageLayout) => {
+      if (err) throw err
+      spritezero.generateImage(imageLayout, (err, image) => {
+        if (err) throw err
+        fs.writeFileSync(pngPath, image)
+      })
+    })
+  }
+
 /**
  * Create Sprite files for Mapbox
  */
@@ -40,35 +87,11 @@ const SpriteCreator = () =>{
     copyFilesToDir(config.sprite.icons.maki, config.sprite.input_dir);
     copyFilesToDir(config.sprite.icons.water, config.sprite.input_dir);
 
-    [1, 2, 4].forEach(function(pxRatio) {
-        const input_dir = path.join(config.sprite.input_dir, '/*.svg')
-        const output_dir = config.sprite.output_dir;
+    const input_dir = path.join(config.sprite.input_dir, '/*.svg')
+    const svgs = generateSvgs(input_dir);
 
-        var svgs = glob.sync(path.resolve(input_dir))
-            .map(function(f) {
-                return {
-                    svg: fs.readFileSync(f),
-                    id: path.basename(f).replace('.svg', '')
-                };
-            });
-        var pngPath = path.resolve(path.join(output_dir, '/sprite@' + pxRatio + '.png'));
-        var jsonPath = path.resolve(path.join(output_dir, '/sprite@' + pxRatio + '.json'));
-    
-        // Pass `true` in the layout parameter to generate a data layout
-        // suitable for exporting to a JSON sprite manifest file.
-        spritezero.generateLayout({ imgs: svgs, pixelRatio: pxRatio, format: true }, function(err, dataLayout) {
-            if (err) return;
-            fs.writeFileSync(jsonPath, JSON.stringify(dataLayout));
-        });
-    
-        // Pass `false` in the layout parameter to generate an image layout
-        // suitable for exporting to a PNG sprite image file.
-        spritezero.generateLayout({ imgs: svgs, pixelRatio: pxRatio, format: false }, function(err, imageLayout) {
-            spritezero.generateImage(imageLayout, function(err, image) {
-                if (err) return;
-                fs.writeFileSync(pngPath, image);
-            });
-        });
+    [1, 2, 4].forEach(function(pxRatio) {
+        generateSprite(pxRatio, svgs);
     });
 };
 

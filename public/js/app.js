@@ -1,16 +1,21 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibmFyd2Fzc2NvIiwiYSI6ImNrOXIxOTFleTBvNGIzZ3A4b3docmE5cHQifQ.BqsnWbWZ2NwJZDWyOVWjXA';
 
 const STYLES = [
+    // {
+    //     label: 'NAWASSCO',
+    //     styleName: 'NARWASSCO',
+    //     styleUrl: './stylefile/style.json',
+    // },
     {
     label: 'Street',
     styleName: 'Street',
     styleUrl: 'mapbox://styles/mapbox/streets-v9',
     }, 
-    {
-    label: 'Satellite',
-    styleName: 'Satellite',
-    styleUrl: 'mapbox://styles/mapbox/satellite-streets-v11',
-    },
+    // {
+    // label: 'Satellite',
+    // styleName: 'Satellite',
+    // styleUrl: 'mapbox://styles/mapbox/satellite-streets-v11',
+    // },
 ];
 
 $(function(){
@@ -42,7 +47,7 @@ $(function(){
                 this_.map.addSource('assets', {
                     'type': 'vector',
                     'tiles': [
-                        style.sources.assets.url
+                        style.sources.assets.tiles[0]
                     ],
                     'minzoom': 10,
                     'maxzoom': 18
