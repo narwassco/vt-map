@@ -18,7 +18,7 @@ module.exports = {
     },
     sprite:{
       icons: {
-        maki: export_dir + '/src/maki/icons',
+        maki: export_dir + '/resources/maki/icons',
         water: export_dir + '/resources/water',
       },
       input_dir: export_dir + '/resources/svg',
