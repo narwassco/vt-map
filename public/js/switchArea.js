@@ -28,7 +28,16 @@ var defaultAreas = [{
   label: "Ololulung'a",
   latlng: [35.65072, -1.0085],
   zoom: 13
-}];
+}, {
+  label: "Kilgoris",
+  latlng: [34.87533, -1.00278],
+  zoom: 14
+}, {
+  label: "Suswa",
+  latlng: [36.33078, -1.05307],
+  zoom: 13
+}
+];
 /**
  * Adds area switcher.
  * @param {Object} options
@@ -57,26 +66,26 @@ var SwitchAreasControl = /*#__PURE__*/function () {
       this.container = document.createElement('div');
       this.container.classList.add('mapboxgl-ctrl');
       this.container.classList.add('mapboxgl-ctrl-group');
-      this.container.classList.add('mapboxgl-ctrl-styles');
+      this.container.classList.add('mapboxgl-ctrl-switch');
       this.nodes = [];
+
+      this.select = document.createElement('select');
+      this.select.setAttribute('type', 'select');
+      this.select.addEventListener('change', function (e) {
+        _this.map.jumpTo(JSON.parse(e.target[this.selectedIndex].value));
+      });
+      this.container.appendChild(this.select);
+      
+
       this.areas.forEach(function (area) {
-        var node = document.createElement('button');
-        node.setAttribute('type', 'button');
-        node.textContent = area.label;
-        node.addEventListener('click', function () {
-          if (node.classList.contains('-active')) return;
-
-          _this.map.jumpTo({
-            center: area.latlng,
-            zoom: area.zoom,
-            });
-
-          if (_this.onChange) _this.onChange(area);
-        });
-
-        _this.nodes.push(node);
-
-        _this.container.appendChild(node);
+        var node = document.createElement('option');
+        node.setAttribute('type', 'option');
+        node.text = area.label;
+        node.value = JSON.stringify({
+          center: area.latlng,
+          zoom: area.zoom,
+          });
+        _this.select.appendChild(node);
       });
     }
   }, {
@@ -86,22 +95,6 @@ var SwitchAreasControl = /*#__PURE__*/function () {
 
       this.map = map;
       this.insertControls();
-      // this.map.on('styledata', function () {
-      //   [].forEach.call(_this2.container.querySelectorAll('button'), function (div) {
-      //     div.classList.remove('-active');
-      //   });
-
-      //   var styleNames = _this2.styles.map(function (style) {
-      //     return style.styleName;
-      //   });
-
-      //   var currentStyleIndex = styleNames.indexOf(_this2.map.getStyle().name);
-
-      //   if (currentStyleIndex !== -1) {
-      //     var currentNode = _this2.nodes[currentStyleIndex];
-      //     currentNode.classList.add('-active');
-      //   }
-      // });
       return this.container;
     }
   }, {

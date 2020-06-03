@@ -38,6 +38,27 @@ th{
     background: #f5f5f5;
 }
 
+/* area switcher tool */
+.mapboxgl-ctrl-styles {
+  display: flex;
+}
+.mapboxgl-ctrl-switch select {
+  width: auto;
+  display: flex;
+  height: 25px;
+  padding: 0 8px;
+  align-items: center;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: rgba(151,151,151, 1.0);
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+}
+
+
 /* ruler tool */
 .mapboxgl-ctrl-ruler button.-active svg {
     fill: #4264fb;
