@@ -2,6 +2,7 @@ const spritezero = require('@mapbox/spritezero');
 const fs = require('fs');
 const glob = require('glob');
 const path = require('path');
+const rimraf = require('rimraf');
 
 const config = require('../config');
 
@@ -53,6 +54,12 @@ const suffix = (pxRatio) => {
 
 const generateSprite = (pxRatio, svgs) => {
     const output_dir = config.sprite.output_dir;
+    if (fs.existsSync(output_dir)){
+      if (fs.existsSync(output_dir)){
+        rimraf.sync(output_dir);
+      }
+    }
+    fs.mkdirSync(output_dir);
     var pngPath = path.resolve(path.join(output_dir, `/sprite${suffix(pxRatio)}.png`));
     var jsonPath = path.resolve(path.join(output_dir, `/sprite${suffix(pxRatio)}.json`));
 

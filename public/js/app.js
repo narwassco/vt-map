@@ -1,21 +1,21 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoibmFyd2Fzc2NvIiwiYSI6ImNrOXIxOTFleTBvNGIzZ3A4b3docmE5cHQifQ.BqsnWbWZ2NwJZDWyOVWjXA';
 
 const STYLES = [
-    // {
-    //     label: 'NAWASSCO',
-    //     styleName: 'NARWASSCO',
-    //     styleUrl: './stylefile/style.json',
-    // },
+    {
+        label: 'NAWASSCO',
+        styleName: 'NARWASSCO',
+        styleUrl: './style.json',
+    },
     {
     label: 'Street',
     styleName: 'Street',
     styleUrl: 'mapbox://styles/mapbox/streets-v9',
     }, 
-    // {
-    // label: 'Satellite',
-    // styleName: 'Satellite',
-    // styleUrl: 'mapbox://styles/mapbox/satellite-streets-v11',
-    // },
+    {
+    label: 'Satellite',
+    styleName: 'Satellite',
+    styleUrl: 'mapbox://styles/mapbox/satellite-streets-v11',
+    },
 ];
 
 $(function(){
@@ -35,31 +35,8 @@ $(function(){
             if (!this_.map.hasImage(name)) this_.map.addImage(name, image);
         });
     }
-
-    const loadAssetData = function(){
-        var images = ['firehydrant','meter_avg','meter_co','meter_on','meter','valve','washout','pe-regional-4','rectangle-yellow-6']
-        images.forEach(img=>{
-            loadImage(`./stylefile/icons/${img}.png`, img);
-        })
     
-        this_.map.on('load', function() {
-            $.get('./stylefile/style.json', (style)=>{
-                this_.map.addSource('assets', {
-                    'type': 'vector',
-                    'tiles': [
-                        style.sources.assets.tiles[0]
-                    ],
-                    'minzoom': 10,
-                    'maxzoom': 18
-                    });
-                style.layers.forEach(l=>{
-                    this_.map.addLayer(l);
-                })
-            });
-        });
-    }
-    
-    // this.map.addControl(new StylesControl({styles: STYLES,}), 'top-left');
+    this.map.addControl(new StylesControl({styles: STYLES,}), 'top-left');
     this.map.addControl(new SwitchAreasControl(), 'top-left');
     this.map.addControl(new mapboxgl.FullscreenControl(), 'top-right');
     this.map.addControl(new mapboxgl.NavigationControl());
@@ -67,7 +44,7 @@ $(function(){
     this.map.addControl(new mapboxgl.ScaleControl({maxWidth: 80, unit: 'metric'}));
     this.map.addControl(new RulerControl(), 'top-right');
     this.map.addControl(new mapboxgl.GeolocateControl({positionOptions: {enableHighAccuracy: true},trackUserLocation: true}));
-    this.map.addControl(new mapboxgl.AttributionControl({compact: true,customAttribution: 'Narok Water and Sewerage Services Co., Ltd.'}));
+    this.map.addControl(new mapboxgl.AttributionControl({compact: true,}));
     //this.map.addControl(new InspectControl(), 'bottom-right');
     // this.map.addControl(new MapboxDraw({
     //     displayControlsDefault: false,
@@ -112,6 +89,4 @@ $(function(){
     this.map.on('click', 'intake', createPopup);
     this.map.on('click', 'wtp', createPopup);
     this.map.on('click', 'pipeline', createPopup);
-
-    loadAssetData();
 })

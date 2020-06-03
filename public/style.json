@@ -15,12 +15,12 @@
             "type": "vector"
         },
         "assets": {
-            "attribution": "Narok Water & Sewerage Services Company, Ltd.",
+            "attribution": "©NARWASSCO,Ltd., ©Mapbox",
             "minzoom": 10,
             "maxzoom": 18,
             "tiles": [
                 "https://narwassco.github.io/vt-map/tiles/{z}/{x}/{y}.mvt"
-              ],
+            ],
             "type": "vector"
         }
     },
@@ -6188,7 +6188,7 @@
                 ],
                 "tree",
                 "park",
-                "default"
+                "circle-11"
               ]
             },
             "minzoom": 18,
@@ -6273,7 +6273,7 @@
                 ],
                 "bus_stop",
                 "bus_stop",
-                "default"
+                "circle-11"
               ],
               "text-anchor": "top",
               "text-field": [
@@ -6339,12 +6339,12 @@
                   "railway"
                 ],
                 "station",
-                "railway_station",
+                "rail-11",
                 "halt",
                 "halt",
                 "tram_stop",
                 "tram_stop",
-                "default"
+                "circle-11"
               ],
               "text-anchor": "top",
               "text-field": [
@@ -6436,8 +6436,8 @@
                   "barrier"
                 ],
                 "gate",
-                "prison",
-                "default"
+                "prison-11",
+                "circle-11"
               ]
             },
             "minzoom": 17,
@@ -6558,7 +6558,7 @@
                   "capital"
                 ],
                 "yes",
-                "national_capital",
+                "city-11",
                 [
                   "match",
                   [
@@ -6608,36 +6608,36 @@
                     "sports_centre",
                     "tennis"
                   ],
-                  "sport",
+                  "fitness-centre-11",
                   [
                     "public_building",
                     "townhall"
                   ],
-                  "public_building",
+                  "college-11",
                   [
                     "college",
                     "university"
                   ],
-                  "college",
+                  "college-11",
                   [
                     "restaurant",
                     "fast_food",
                     "cafe",
                     "food_court"
                   ],
-                  "restaurant",
+                  "restaurant-11",
                   [
                     "biergarten",
                     "nightclub",
                     "pub",
                     "bar"
                   ],
-                  "bar",
+                  "bar-11",
                   [
                     "community_centre",
                     "government"
                   ],
-                  "other_public_building",
+                  "building-11",
                   [
                     "library",
                     "arts_centre",
@@ -6645,31 +6645,31 @@
                     "ruins",
                     "museum"
                   ],
-                  "public_building",
+                  "building-11",
                   [
                     "money_transfer",
                     "bureau_de_change",
                     "bank",
                     "atm"
                   ],
-                  "bank",
+                  "bank-11",
                   [
                     "monument",
                     "memorial",
                     "grave_yard"
                   ],
-                  "memorial",
+                  "castle-11",
                   [
                     "castle",
                     "fort"
                   ],
-                  "castle",
+                  "castle-11",
                   [
                     "bed_and_breakfast",
                     "hotel",
                     "chalet"
                   ],
-                  "hotel",
+                  "lodging-11",
                   [
                     "car_repair",
                     "supermarket",
@@ -6695,48 +6695,48 @@
                     "car_rental",
                     "bakery"
                   ],
-                  "commercial",
-                  "drinking_water",
-                  "water_supply",
-                  "bus_station",
-                  "bus_station",
-                  "park",
-                  "park",
-                  "stadium",
-                  "stadium",
-                  "embassy",
-                  "embassy",
-                  "hospital",
-                  "hospital",
-                  "fuel",
-                  "fuel",
-                  "airport",
-                  "airport",
-                  "ferry_terminal",
-                  "ferry_terminal",
-                  "zoo",
-                  "zoo",
-                  "theme_park",
-                  "theme_park",
-                  "airfield",
-                  "airfield",
-                  "ngo",
-                  "ngo",
-                  "pharmacy",
-                  "pharmacy",
-                  "courthouse",
-                  "courthouse",
-                  "police",
-                  "police_station",
-                  "prison",
-                  "prison",
-                  "fire_station",
-                  "fire_station",
-                  "post_office",
-                  "post_office",
-                  "school",
-                  "school",
-                  "default"
+                  "commercial-11",
+                  "drinking-water-11",
+                  "water-11",
+                  "bus-11",
+                  "bus-11",
+                  "park-11",
+                  "park-11",
+                  "stadium-11",
+                  "stadium-11",
+                  "embassy-11",
+                  "embassy-11",
+                  "hospital-11",
+                  "hospital-11",
+                  "fuel-11",
+                  "fuel-11",
+                  "airport-11",
+                  "airport-11",
+                  "ferry-11",
+                  "ferry-11",
+                  "zoo-11",
+                  "zoo-11",
+                  "amusement-park-11",
+                  "amusement-park-11",
+                  "airfield-11",
+                  "airfield-11",
+                  "building-11",
+                  "building-11",
+                  "pharmacy-11",
+                  "pharmacy-11",
+                  "townhall-11",
+                  "townhall-11",
+                  "police-11",
+                  "police-11",
+                  "prison-11",
+                  "prison-11",
+                  "fire-station-11",
+                  "fire-station-11",
+                  "post-11",
+                  "post-11",
+                  "school-11",
+                  "school-11",
+                  "circle-11"
                 ]
               ],
               "icon-size": [
@@ -7089,6 +7089,9 @@
                         ["get", "pipesize"]
                     ]
                 ],
+                "text-font": [
+                    "sans"
+                ],
                 "text-size": 12,
                 "text-offset": [0, 1.5],
                 "text-max-width": 6
@@ -7110,6 +7113,9 @@
                     16,
                     ["to-string", ["get", "size"]]
                 ],
+                "text-font": [
+                    "sans"
+                ],
                 "text-size": 12,
                 "text-offset": [0, -1.2]
             },
@@ -7128,6 +7134,9 @@
                     "",
                     16,
                     ["to-string", ["get", "size"]]
+                ],
+                "text-font": [
+                    "sans"
                 ],
                 "text-size": 12,
                 "text-offset": [0, 1],
@@ -7152,11 +7161,10 @@
                 "text-field": ["step", ["zoom"], "", 14, ["get", "metertype"]],
                 "text-size": 12,
                 "text-font": [
-                    "Arial Unicode MS Regular",
-                    "Arial Unicode MS Regular"
+                    "sans"
                 ],
                 "text-offset": [0, 1],
-                "icon-image": "milan-metro",
+                "icon-image": "meter",
                 "text-justify": "left"
             },
             "paint": {
@@ -7181,8 +7189,7 @@
             "layout": {
                 "text-size": 12,
                 "text-font": [
-                    "Arial Unicode MS Regular",
-                    "Arial Unicode MS Regular"
+                    "sans"
                 ],
                 "text-offset": [0, 1],
                 "icon-image": [
@@ -7228,8 +7235,7 @@
                 "text-field": ["to-string", ["get", "name"]],
                 "text-size": 15,
                 "text-font": [
-                    "Arial Unicode MS Bold",
-                    "Arial Unicode MS Regular"
+                    "sans"
                 ],
                 "text-max-width": 8,
                 "icon-image": "default-6",
@@ -7256,8 +7262,7 @@
                 "icon-text-fit": "both",
                 "icon-size": 1.5,
                 "text-font": [
-                    "Arial Unicode MS Bold",
-                    "Arial Unicode MS Regular"
+                    "sans"
                 ],
                 "text-size": 14
             },
@@ -7271,6 +7276,9 @@
             "minzoom": 17,
             "layout": {
                 "text-field": ["to-string", ["get", "parcel_no"]],
+                "text-font": [
+                    "sans"
+                ],
                 "text-size": 12,
                 "symbol-avoid-edges": true
             },
@@ -7296,6 +7304,9 @@
                     ]
                 ],
                 "symbol-placement": "line",
+                "text-font": [
+                    "sans"
+                ],
                 "text-size": 12
             },
             "paint": {"text-halo-color": "#ffffff", "text-halo-width": 1.5}
@@ -7309,6 +7320,9 @@
             "filter": ["match", ["get", "layer"], ["intake"], true, false],
             "layout": {
                 "text-field": ["to-string", ["get", "name"]],
+                "text-font": [
+                    "sans"
+                ],
                 "text-size": 12,
                 "text-max-width": 7
             },
@@ -7324,8 +7338,7 @@
             "layout": {
                 "text-field": ["to-string", ["get", "name"]],
                 "text-font": [
-                    "Arial Unicode MS Regular",
-                    "Arial Unicode MS Regular"
+                    "sans"
                 ],
                 "text-size": 13
             },
@@ -7340,10 +7353,13 @@
             "filter": ["match", ["get", "layer"], ["NARWASSCO"], true, false],
             "layout": {
                 "text-field": ["to-string", ["get", "name"]],
+                "text-font": [
+                    "sans"
+                ],
                 "text-size": 12,
-                "icon-image": "dot-9",
+                "icon-image": "circle-11",
                 "text-offset": [0, 1.2],
-                "icon-size": 2,
+                "icon-size": 1,
                 "text-max-width": 8
             },
             "paint": {
@@ -7367,8 +7383,7 @@
                     ["get", "name"]
                 ],
                 "text-font": [
-                    "Arial Unicode MS Bold",
-                    "Arial Unicode MS Regular"
+                    "sans"
                 ],
                 "text-size": 12,
                 "text-max-width": 7,
