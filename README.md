@@ -37,7 +37,8 @@ npm run deploy
 This source code under the repository is licensed by 
 MIT license. You can use it freely for your purposes.
 
-However, these data under [public](./public) is owned and maintained by `Narok Water and Sewerage Services Company (NARWASSCO)` in Kenya. It is under different license from main repository. 
+However, these data under [public](./public) is owned and maintained by `Narok Water and Sewerage Services Company (NARWASSCO)` in Kenya. It is under a [Creative Commons Attribution 4.0 International
+License](http://creativecommons.org/licenses/by/4.0/), which is different from main repository. 
 
 ---
 Copyright (c) 2020 Narok Water and Sewerage Services Co., Ltd.
