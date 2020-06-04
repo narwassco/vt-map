@@ -31,3 +31,13 @@ It will push all of website contents  under public folder to Github pages.
 ```
 npm run deploy
 ```
+
+# License
+
+This source code under the repository is licensed by 
+MIT license. You can use it freely for your purposes.
+
+However, these data under [public](./public) is owned and maintained by `Narok Water and Sewerage Services Company (NARWASSCO)` in Kenya. It is under different license from main repository. 
+
+---
+Copyright (c) 2020 Narok Water and Sewerage Services Co., Ltd.
