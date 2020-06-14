@@ -1,4 +1,5 @@
-const export_dir = __dirname;
+const export_dir = '/tmp/src/vt-map';
+// const export_dir = __dirname;
 const srid = 21036;
 const bounds = {
   narok : [812426.912,9874766.763, 824725.257,9886273.737],
@@ -11,8 +12,8 @@ module.exports = {
     db: {
         user:'postgres',
         password:'N@rw@ssc0',
-        // host:'host.docker.internal',
-        host:'localhost',
+        host:'host.docker.internal',
+        // host:'localhost',
         post:5432,
         database:'narwassco',
     },

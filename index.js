@@ -3,7 +3,7 @@ const Mbtiles2pbf = require('mbtiles2pbf');
 const config = require('./config');
 
 const VtMapCreator = () =>{
-    console.time('postgis2geojson');
+    console.time('vt-map');
     const pg2json = new postgis2geojson(config);
     pg2json.run().then(res=>{
         console.log(res);
@@ -12,7 +12,7 @@ const VtMapCreator = () =>{
     }).catch(err=>{
         console.log(err);
     }).finally(()=>{
-        console.timeEnd('postgis2geojson');
+        console.timeEnd('vt-map');
     })
 };
 

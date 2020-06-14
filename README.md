@@ -2,8 +2,33 @@
 This is a simple tool to create vector tile map on Github pages.
 
 ## Installation
-Install [mbutil](https://github.com/mapbox/mbutil) on Python
+### tippenacanoe
+This module uses [`tippecanoe`](https://github.com/mapbox/tippecanoe) to convert geojson files to mbtiles. Please make sure to install it before running.
 
+for MacOS
+```
+$ brew install tippecanoe
+```
+
+for Ubuntu
+```
+$ git clone https://github.com/mapbox/tippecanoe.git
+$ cd tippecanoe
+$ make -j
+$ make install
+```
+
+### mbutil
+This module uses [mbutil](https://github.com/mapbox/mbutil) to extract mvt files from mbtiles. Please make sure install it on your python3.
+
+for MacOS & Ubuntu
+```
+git clone git://github.com/mapbox/mbutil.git
+cd mbutil
+sudo python setup.py install
+```
+
+### main module
 ```
 git clone https://github.com/narwassco/vt-map.git --recursive
 npm install
@@ -30,6 +55,18 @@ npm run sprite
 It will push all of website contents  under public folder to Github pages.
 ```
 npm run deploy
+```
+
+# Using Docker
+
+Build Docker Image
+```
+docker build -t narwassco/vt-map .
+```
+
+Create Vector Tile and sprite files under public directory.
+```
+docker-compose up
 ```
 
 # License
