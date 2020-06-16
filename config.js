@@ -11,19 +11,12 @@ const bounds = {
 module.exports = {
     db: {
         user:'postgres',
-        password:'N@rw@ssc0',
+        // password:'N@rw@ssc0',
+        password:'kkc',
         host:'host.docker.internal',
         // host:'localhost',
         post:5432,
         database:'narwassco',
-    },
-    sprite:{
-      icons: {
-        maki: export_dir + '/resources/maki/icons',
-        water: export_dir + '/resources/water',
-      },
-      input_dir: export_dir + '/resources/svg',
-      output_dir: export_dir + '/public/sprite',
     },
     ghpages:{
       tiles: export_dir + '/public/tiles'

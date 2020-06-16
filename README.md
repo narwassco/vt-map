@@ -30,7 +30,7 @@ sudo python setup.py install
 
 ### main module
 ```
-git clone https://github.com/narwassco/vt-map.git --recursive
+git clone https://github.com/narwassco/vt-map.git
 npm install
 ```
 
@@ -46,10 +46,7 @@ npm run build
 ```
 
 ## Create sprite file
-There are SVG images under `resources` folder. It will create sprite file by `spritezero` module. The sprite files will be created under `public/sprite` folder.
-```
-npm run sprite
-```
+You can create sprite files and upload them to gh-pages by [narwassco/sprite-create](https://github.com/narwassco/sprite-create) module. Then, put it url of sprite files on your stylefile.
 
 ## Deploy to gh-pages
 It will push all of website contents  under public folder to Github pages.

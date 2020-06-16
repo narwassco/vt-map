@@ -4,7 +4,17 @@ FROM ubuntu:16.04
 # Update repos and install dependencies
 RUN apt-get update \
   && apt-get -y upgrade \
-  && apt-get -y install build-essential libsqlite3-dev zlib1g-dev curl wget git nodejs npm python3 python3-setuptools
+  && apt-get -y install \
+  build-essential \
+  libsqlite3-dev \
+  zlib1g-dev \
+  curl \
+  wget \
+  git \
+  nodejs \
+  npm \
+  python3 \
+  python3-setuptools
 
 # Build tippecanoe
 RUN mkdir -p /tmp/src
@@ -26,6 +36,6 @@ RUN npm cache clean && npm install n -g && n stable \
 
 # Install vt-map
 RUN cd /tmp/src \
-    && git clone https://github.com/narwassco/vt-map.git --recursive \
+    && git clone https://github.com/narwassco/vt-map.git \
     && cd vt-map \
     && npm install

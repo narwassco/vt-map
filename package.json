@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node index.js",
-    "sprite": "node ./src/SpriteCreator.js",
     "deploy": "gh-pages -d public"
   },
   "repository": {
@@ -20,10 +19,8 @@
   },
   "homepage": "https://github.com/narwassco/vt-map#readme",
   "dependencies": {
-    "@mapbox/spritezero": "^7.0.0",
     "mbtiles2pbf": "git+https://github.com/narwassco/mbtiles2pbf.git",
-    "postgis2geojson": "git+https://github.com/narwassco/postgis2geojson.git",
-    "rimraf": "^3.0.2"
+    "postgis2geojson": "git+https://github.com/narwassco/postgis2geojson.git"
   },
   "devDependencies": {
     "gh-pages": "^3.0.0"
