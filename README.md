@@ -37,6 +37,16 @@ npm install
 ## Configuration
 All the settings are in `config.js`, so please make sure your own settings on this file before producing vector tile.
 
+Please create `.env` file under project root directory to put environment variable for database settings.
+```
+export_dir=/tmp/src/vt-map
+db_user=postgres
+db_password=N@rw@ssc0
+db_host=host.docker.internal
+db_post=5432
+db_name=narwassco
+```
+
 Please also create your own stylefile `style.json` for your layers.
 
 ## Create vector tile from your PostGIS database
