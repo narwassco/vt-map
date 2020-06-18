@@ -38,7 +38,7 @@ $(function(){
 
     var customerData;
     $.ajaxSetup({ async: false });
-    $.getJSON('https://narwassco.github.io/vt-map/data/meter.geojson', function(json){
+    $.getJSON('https://narwassco.github.io/vt-map/meter.geojson', function(json){
         customerData = json;
     })
     $.ajaxSetup({ async: true });

@@ -1,5 +1,7 @@
-const export_dir = '/tmp/src/vt-map';
-// const export_dir = __dirname;
+require('dotenv').config();
+const env = process.env;
+
+const export_dir = env.export_dir || __dirname;
 const srid = 21036;
 const bounds = {
   narok : [812426.912,9874766.763, 824725.257,9886273.737],
@@ -10,12 +12,11 @@ const bounds = {
 
 module.exports = {
     db: {
-      user:'postgres',
-      password:'N@rw@ssc0',
-      host:'host.docker.internal',
-      // host:'localhost',
-      post:5432,
-      database:'narwassco',
+      user:env.db_user,
+      password:env.db_password,
+      host:env.db_host,
+      post:env.db_port,
+      database:env.db_name,
     },
     ghpages:{
       tiles: export_dir + '/public/tiles'

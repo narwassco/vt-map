@@ -1,18 +1,20 @@
-const export_dir = '/tmp/src/vt-map';
-// const export_dir = __dirname;
+require('dotenv').config();
+const env = process.env;
+
+const export_dir = env.export_dir || __dirname;
 
 module.exports = {
     db: {
-        user:'postgres',
-        password:'N@rw@ssc0',
-        host:'host.docker.internal',
-        post:5432,
-        database:'narwassco',
+      user:env.db_user,
+      password:env.db_password,
+      host:env.db_host,
+      post:env.db_port,
+      database:env.db_name,
     },
     layers : [
         {
           name: 'meter',
-          geojsonFileName: export_dir + '/public/data/meter.geojson',
+          geojsonFileName: export_dir + '/public/meter.geojson',
           select:`
           SELECT row_to_json(featurecollection) AS json FROM (
             SELECT
