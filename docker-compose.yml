@@ -1,15 +1,10 @@
 version: '2'
 services:
   nodejs:
-    image: narwassco/vt-map
+    image: narwassco/vt-map:v0.1
     build: .
-    environment: 
-      - export_dir=/tmp/src/vt-map
-      - db_user=postgres
-      - db_password=N@rw@ssc0
-      - db_host=host.docker.internal
-      - db_post=5432
-      - db_name=narwassco
+    env_file:
+      - ./app-docker.env
     volumes:
       - ./public:/tmp/src/vt-map/public
       - ./config.js:/tmp/src/vt-map/config.js
