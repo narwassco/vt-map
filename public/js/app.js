@@ -35,6 +35,49 @@ $(function(){
             if (!this_.map.hasImage(name)) this_.map.addImage(name, image);
         });
     }
+
+    var customerData;
+    $.ajaxSetup({ async: false });
+    $.getJSON('https://narwassco.github.io/vt-map/data/meter.geojson', function(json){
+        customerData = json;
+    })
+    $.ajaxSetup({ async: true });
+    
+    function forwardGeocoder(query) {
+        var matched = function(value, query){
+            return (value.toString().toLowerCase().search(query.toString().toLowerCase()) !== -1);
+        }
+        var matchingFeatures = [];
+        for (var i = 0; i < customerData.features.length; i++) {
+            var feature = customerData.features[i];
+            // console.log(feature.properties)
+            // handle queries with different capitalization than the source data by calling toLowerCase()
+            ['connno', 'serialno', 'customer'].forEach(v=>{
+                var target = feature.properties[v];
+                if (!target){
+                    return;
+                }
+                if (matched(target,query)) {
+                    feature['place_name'] = `${feature.properties.connno}:${feature.properties.customer}`;
+                    feature['center'] = feature.geometry.coordinates;
+                    feature['place_type'] = ['meter'];
+                    matchingFeatures.push(feature);
+                }
+            })
+        }
+        return matchingFeatures;
+    }
+
+    this.map.addControl(
+        new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            localGeocoder: forwardGeocoder,
+            zoom: 16,
+            placeholder: 'CONN NO, S/N, Name',
+            mapboxgl: mapboxgl
+        }),
+        'top-left'
+    );
     
     this.map.addControl(new StylesControl({styles: STYLES,}), 'top-left');
     this.map.addControl(new SwitchAreasControl(), 'top-left');
