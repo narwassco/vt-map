@@ -7148,7 +7148,7 @@
             "id": "flow meter",
             "type": "symbol",
             "source": "assets",
-            "source-layer": "meter",
+            "source-layer": "flowmeter",
             "minzoom": 14,
             "filter": [
                 "match",
