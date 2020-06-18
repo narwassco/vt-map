@@ -52,13 +52,13 @@ $(function(){
             var feature = customerData.features[i];
             // console.log(feature.properties)
             // handle queries with different capitalization than the source data by calling toLowerCase()
-            ['connno', 'serialno', 'customer'].forEach(v=>{
+            ['connno', 'serialno'].forEach(v=>{
                 var target = feature.properties[v];
                 if (!target){
                     return;
                 }
                 if (matched(target,query)) {
-                    feature['place_name'] = `${feature.properties.connno}:${feature.properties.customer}`;
+                    feature['place_name'] = `${feature.properties.customer}, ${feature.properties.connno}, ${feature.properties.serialno}, ${feature.properties.village}`;
                     feature['center'] = feature.geometry.coordinates;
                     feature['place_type'] = ['meter'];
                     matchingFeatures.push(feature);

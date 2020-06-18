@@ -1,5 +1,6 @@
 *.mbtiles
 public/tiles
+public/data/*.geojson
 
 # Logs
 logs

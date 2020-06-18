@@ -10,12 +10,12 @@ const bounds = {
 
 module.exports = {
     db: {
-        user:'postgres',
-        password:'N@rw@ssc0',
-        host:'host.docker.internal',
-        // host:'localhost',
-        post:5432,
-        database:'narwassco',
+      user:'postgres',
+      password:'N@rw@ssc0',
+      host:'host.docker.internal',
+      // host:'localhost',
+      post:5432,
+      database:'narwassco',
     },
     ghpages:{
       tiles: export_dir + '/public/tiles'

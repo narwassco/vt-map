@@ -6,4 +6,5 @@ services:
     entrypoint: "/bin/bash -c 'cd /tmp/src/vt-map && npm run build'"
     volumes:
       - ./public:/tmp/src/vt-map/public
-      - ./config.js:/tmp/src/vt-map/config.js      
+      - ./config.js:/tmp/src/vt-map/config.js
+      - ./config-search.js:/tmp/src/vt-map/config-search.js   

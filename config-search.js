@@ -6,7 +6,6 @@ module.exports = {
         user:'postgres',
         password:'N@rw@ssc0',
         host:'host.docker.internal',
-        // host:'localhost',
         post:5432,
         database:'narwassco',
     },
@@ -28,8 +27,6 @@ module.exports = {
                   SELECT
                   x.meterid as fid,
                   CASE WHEN x.connno=-1 THEN NULL ELSE LPAD(CAST(x.connno as text), 4, '0') || x.zonecd END as connno,
-                  x.installationdate,
-                  b.status,
                   x.serialno,
                   b.name as customer,
                   c.name as village

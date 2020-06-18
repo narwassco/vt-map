@@ -5,6 +5,9 @@ const configSearch = require('./config-search');
 
 const VtMapCreator = () =>{
     console.time('vt-map');
+    //create geojson file for search function
+    createGeoJSONSearch();
+
     const pg2json = new postgis2geojson(config);
     pg2json.run().then(res=>{
         console.log(res);
@@ -12,8 +15,6 @@ const VtMapCreator = () =>{
         const mbtiles2pbf = new Mbtiles2pbf(config.mbtiles, config.ghpages.tiles);
         mbtiles2pbf.run();
 
-        //create geojson file for search function
-        createGeoJSONSearch();
     }).catch(err=>{
         console.log(err);
     }).finally(()=>{
