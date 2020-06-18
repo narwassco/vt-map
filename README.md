@@ -37,7 +37,7 @@ npm install
 ## Configuration
 All the settings are in `config.js`, so please make sure your own settings on this file before producing vector tile.
 
-Please create `.env` file under project root directory to put environment variable for database settings.
+Please create `app-docker.env` file under project root directory to put environment variable for database settings.
 ```
 export_dir=/tmp/src/vt-map
 db_user=postgres
@@ -49,22 +49,7 @@ db_name=narwassco
 
 Please also create your own stylefile `style.json` for your layers.
 
-## Create vector tile from your PostGIS database
-It will retrieve the data from PostGIS as mbtiles format, then vector tiles (.mvt) were extracted under `public/tiles` folder.
-```
-npm run build
-```
-
-## Create sprite file
-You can create sprite files and upload them to gh-pages by [narwassco/sprite-create](https://github.com/narwassco/sprite-create) module. Then, put it url of sprite files on your stylefile.
-
-## Deploy to gh-pages
-It will push all of website contents  under public folder to Github pages.
-```
-npm run deploy
-```
-
-# Using Docker
+## Create vector tile from your PostGIS database by using Docker
 
 Build Docker Image
 ```
@@ -75,6 +60,21 @@ Create Vector Tile and sprite files under public directory.
 ```
 docker-compose up
 ```
+
+## Create vector tile from your PostGIS database by using local Nodejs
+It will retrieve the data from PostGIS as mbtiles format, then vector tiles (.mvt) were extracted under `public/tiles` folder.
+```
+npm run build
+```
+
+## Deploy to gh-pages
+It will push all of website contents  under public folder to Github pages.
+```
+npm run deploy
+```
+
+## Create sprite file
+You can create sprite files and upload them to gh-pages by [narwassco/sprite-create](https://github.com/narwassco/sprite-create) module. Then, put it url of sprite files on your stylefile.
 
 # License
 

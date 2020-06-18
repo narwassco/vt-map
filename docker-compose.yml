@@ -1,7 +1,7 @@
 version: '2'
 services:
   nodejs:
-    image: narwassco/vt-map:v0.1
+    image: narwassco/vt-map
     build: .
     env_file:
       - ./app-docker.env
