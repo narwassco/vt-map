@@ -39,3 +39,7 @@ RUN cd /tmp/src \
     && git clone https://github.com/narwassco/vt-map.git \
     && cd vt-map \
     && npm install
+
+ADD docker-entrypoint.sh /tmp/docker-entrypoint.sh
+RUN chmod +x /tmp/docker-entrypoint.sh
+CMD ["/tmp/docker-entrypoint.sh"]

@@ -3,7 +3,6 @@ services:
   nodejs:
     image: narwassco/vt-map
     # build: .
-    entrypoint: "/bin/bash -c 'cd /tmp/src/vt-map && npm run build'"
     volumes:
       - ./public:/tmp/src/vt-map/public
       - ./config.js:/tmp/src/vt-map/config.js
