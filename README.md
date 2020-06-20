@@ -47,7 +47,9 @@ db_post=5432
 db_name=narwassco
 ```
 
-Please also create your own stylefile `style.json` for your layers.
+The stylefile `style.json` under this repository is just for checking the vector tile data.
+
+We are managing Mapbox Stylefile in [narwassco/mapbox-stylefiles](https://github.com/narwassco/mapbox-stylefiles).
 
 ## Create vector tile from your PostGIS database by using Docker
 
@@ -72,9 +74,6 @@ It will push all of website contents  under public folder to Github pages.
 ```
 npm run deploy
 ```
-
-## Create sprite file
-You can create sprite files and upload them to gh-pages by [narwassco/sprite-create](https://github.com/narwassco/sprite-create) module. Then, put it url of sprite files on your stylefile.
 
 # License
 
