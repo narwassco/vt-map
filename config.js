@@ -23,7 +23,7 @@ module.exports = {
     },
     mbtiles: export_dir + '/narok.mbtiles',
     minzoom: 10,
-    maxzoom: 18,
+    maxzoom: 16,
     layers : [
         {
             name: 'pipeline',
@@ -49,7 +49,7 @@ module.exports = {
                     row_to_json((
                       SELECT t FROM (
                         SELECT
-                          22 as maxzoom,
+                          16 as maxzoom,
                           10 as minzoom
                       ) AS t
                     )) AS tippecanoe,
@@ -91,7 +91,7 @@ module.exports = {
               row_to_json((
                 SELECT t FROM (
                   SELECT
-                    18 as maxzoom,
+                    16 as maxzoom,
                     16 as minzoom
                 ) AS t
               )) AS tippecanoe,
@@ -141,7 +141,7 @@ module.exports = {
               row_to_json((
                 SELECT t FROM (
                   SELECT
-                    18 as maxzoom,
+                    16 as maxzoom,
                     14 as minzoom
                 ) AS t
               )) AS tippecanoe,
@@ -200,7 +200,7 @@ module.exports = {
               row_to_json((
                 SELECT t FROM (
                   SELECT
-                    18 as maxzoom,
+                    16 as maxzoom,
                     15 as minzoom
                 ) AS t
               )) AS tippecanoe,
@@ -240,7 +240,7 @@ module.exports = {
               row_to_json((
                 SELECT t FROM (
                   SELECT
-                    18 as maxzoom,
+                    16 as maxzoom,
                     15 as minzoom
                 ) AS t
               )) AS tippecanoe,
@@ -276,7 +276,7 @@ module.exports = {
               row_to_json((
                 SELECT t FROM (
                   SELECT
-                    18 as maxzoom,
+                    16 as maxzoom,
                     15 as minzoom
                 ) AS t
               )) AS tippecanoe,
@@ -312,7 +312,7 @@ module.exports = {
                     row_to_json((
                       SELECT t FROM (
                         SELECT
-                          18 as maxzoom,
+                          16 as maxzoom,
                           13 as minzoom
                       ) AS t
                     )) AS tippecanoe,
@@ -372,7 +372,7 @@ module.exports = {
               row_to_json((
                 SELECT t FROM (
                   SELECT
-                    18 as maxzoom,
+                    16 as maxzoom,
                     10 as minzoom
                 ) AS t
               )) AS tippecanoe,
@@ -420,7 +420,7 @@ module.exports = {
               row_to_json((
                 SELECT t FROM (
                   SELECT
-                    18 as maxzoom,
+                    16 as maxzoom,
                     16 as minzoom
                 ) AS t
               )) AS tippecanoe,
@@ -465,8 +465,8 @@ module.exports = {
               row_to_json((
                 SELECT t FROM (
                   SELECT
-                    18 as maxzoom,
-                    17 as minzoom
+                    16 as maxzoom,
+                    16 as minzoom
                 ) AS t
               )) AS tippecanoe,
               row_to_json((
@@ -497,7 +497,7 @@ module.exports = {
               row_to_json((
                 SELECT t FROM (
                   SELECT
-                    17 as maxzoom,
+                    16 as maxzoom,
                     10 as minzoom
                 ) AS t
               )) AS tippecanoe,
@@ -533,7 +533,7 @@ module.exports = {
               row_to_json((
                 SELECT t FROM (
                   SELECT
-                    17 as maxzoom,
+                    16 as maxzoom,
                     13 as minzoom
                 ) AS t
               )) AS tippecanoe,
@@ -610,7 +610,7 @@ module.exports = {
               row_to_json((
                 SELECT t FROM (
                   SELECT
-                    18 as maxzoom,
+                    16 as maxzoom,
                     10 as minzoom
                 ) AS t
               )) AS tippecanoe,
