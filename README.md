@@ -45,8 +45,9 @@ All the settings are in `config.js`, so please make sure your own settings on th
 Please create `app-docker.env` file under project root directory to put environment variable for database settings.
 ```
 export_dir=/tmp/src/vt-map
+
 db_user=postgres
-db_password=N@rw@ssc0
+db_password=Your password
 db_host=host.docker.internal
 db_post=5432
 db_name=narwassco
