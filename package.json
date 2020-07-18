@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/narwassco/vt-map#readme",
   "dependencies": {
-    "@watergis/mbtiles2pbf": "0.0.1",
+    "@watergis/mbtiles2pbf": "^0.0.2",
     "@watergis/postgis2geojson": "^0.1.1",
     "dotenv": "^8.2.0",
     "postgis2mbtiles": "git+https://github.com/narwassco/postgis2mbtiles.git"

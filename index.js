@@ -1,5 +1,5 @@
 const postgis2mbtiles = require('postgis2mbtiles');
-const {Mbtiles2Pbf} = require('@watergis/mbtiles2pbf');
+const {Mbtiles2Pbf, FileExtension} = require('@watergis/mbtiles2pbf');
 const {postgis2geojson} = require('@watergis/postgis2geojson');
 const config = require('./config');
 const configSearch = require('./config-search');
@@ -10,7 +10,7 @@ const VtMapCreator = () =>{
     createGeoJSONSearch();
 
     const pg2mbtiles = new postgis2mbtiles(config);
-    const mbtiles2pbf = new Mbtiles2Pbf(config.mbtiles, config.ghpages.tiles, ".mvt");
+    const mbtiles2pbf = new Mbtiles2Pbf(config.mbtiles, config.ghpages.tiles, FileExtension.MVT);
     pg2mbtiles.run()
     .then(res=>{return mbtiles2pbf.run()})
     .catch(err=>{console.log(err);}).finally(()=>{
