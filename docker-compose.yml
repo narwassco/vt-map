@@ -1,11 +1,12 @@
 version: '2'
 services:
   nodejs:
-    image: narwassco/vt-map:v0.0.2
+    image: narwassco/vt-map:v0.0.3
     #build: .
     env_file:
       - ./app-docker.env
     volumes:
       - ./public:/tmp/src/vt-map/public
+      - ./data:/tmp/src/vt-map/data
       - ./config.js:/tmp/src/vt-map/config.js
       - ./config-search.js:/tmp/src/vt-map/config-search.js   

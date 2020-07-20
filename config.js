@@ -21,7 +21,7 @@ module.exports = {
     ghpages:{
       tiles: export_dir + '/public/tiles'
     },
-    mbtiles: export_dir + '/narok.mbtiles',
+    mbtiles: export_dir + '/data/narok.mbtiles',
     minzoom: 10,
     maxzoom: 16,
     layers : [
