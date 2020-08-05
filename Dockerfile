@@ -12,9 +12,7 @@ RUN apt-get update \
   wget \
   git \
   nodejs \
-  npm \
-  python3 \
-  python3-setuptools
+  npm
 
 # Build tippecanoe
 RUN mkdir -p /tmp/src
@@ -24,22 +22,15 @@ WORKDIR /tmp/src/tippecanoe
 RUN make \
     && make install
 
-# Install mbutil
-WORKDIR /tmp/src
-RUN git clone git://github.com/mapbox/mbutil.git
-WORKDIR /tmp/src/mbutil
-RUN python3 setup.py install
-
 # Install Nodejs
 RUN npm cache clean && npm install n -g && n stable \
     && n 12.14.1 && ln -sf /usr/local/bin/node /usr/bin/node
 
 # Install vt-map
-RUN cd /tmp/src \
-    && git clone https://github.com/narwassco/vt-map.git \
-    && cd vt-map \
-    && npm install
+RUN mkdir -p /tmp/src/vt-map
+WORKDIR /tmp/src/vt-map
+COPY . /tmp/src/vt-map
+RUN npm install
 
-ADD docker-entrypoint.sh /tmp/docker-entrypoint.sh
-RUN chmod +x /tmp/docker-entrypoint.sh
-CMD ["/tmp/docker-entrypoint.sh"]
+RUN chmod a+x /tmp/src/vt-map/docker-entrypoint.sh
+CMD ["/tmp/src/vt-map/docker-entrypoint.sh"]

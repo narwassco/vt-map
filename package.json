@@ -20,7 +20,7 @@
   "homepage": "https://github.com/narwassco/vt-map#readme",
   "dependencies": {
     "@watergis/postgis2geojson": "^0.1.6",
-    "@watergis/postgis2vectortiles": "^0.1.3",
+    "@watergis/postgis2vectortiles": "^0.1.4",
     "dotenv": "^8.2.0"
   },
   "devDependencies": {
