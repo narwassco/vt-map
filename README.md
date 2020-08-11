@@ -6,6 +6,8 @@
 
 This is a simple tool to create vector tile map on Github pages.
 
+## This repository is no londer used. It has been moved to [narwassco/vt](https://github.com/narwassco/vt)!
+
 ## Installation
 ### tippecanoe
 This module uses [`tippecanoe`](https://github.com/mapbox/tippecanoe) to convert geojson files to mbtiles. Please make sure to install it before running.
